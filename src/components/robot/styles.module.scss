@@ -1,0 +1,83 @@
+$robot_size: calc((80vh / 5) / 3);
+$grid_size: 5;
+$cell_size: calc(40vw / #{$grid_size});
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  max-height: calc(100% / #{$grid_size});
+  min-height: calc(100% / #{$grid_size});
+  max-width: calc(100% / #{$grid_size});
+  min-width: calc(100% / #{$grid_size});
+  position: absolute;
+  justify-content: center;
+  top: 0;
+  left: 0;
+}
+
+@keyframes robot {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.robot {
+  align-items: flex-start;
+  border-radius: 50%;
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-height: $robot_size;
+  max-width: $robot_size;
+  min-height: $robot_size;
+  min-width: $robot_size;
+  overflow: hidden;
+  transition: var(--transition);
+  animation: robot 1.5s infinite;
+
+  &:after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "🤖";
+    font-size: 30px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  &.facing {
+    &--north:after {
+      transform: rotate(0deg);
+    }
+    &--east:after {
+      transform: rotate(90deg);
+    }
+    &--south:after {
+      transform: rotate(180deg);
+    }
+    &--west:after {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+@for $y from 0 through ($grid_size - 1) {
+  .robot.pos-y--#{$y} {
+    transform: translateY(calc(#{$cell_size} * #{$grid_size - 1 - $y}));
+  }
+
+  @for $x from 0 through ($grid_size - 1) {
+    .robot[data-pos="#{$x},#{$y}"] {
+      transform: translateX(calc(#{$cell_size} * #{$grid_size - 1 - $x}))
+        translateY(calc(#{$cell_size} * #{$grid_size - 1 - $y}));
+    }
+  }
+}

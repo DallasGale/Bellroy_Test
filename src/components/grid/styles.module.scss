@@ -1,0 +1,15 @@
+.grid {
+  backface-visibility: visible;
+  box-sizing: border-box;
+  background-color: var(--color-bellroy-grey);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: var(--gridSize);
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.3s ease;
+  width: var(--gridSize);
+  margin-top: 180px;
+  box-shadow: 0 27px 15px -17px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}

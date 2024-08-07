@@ -1,0 +1,22 @@
+:root {
+  --breakpoint-lg: 992px;
+  --breakpoint-md: 768px;
+  --breakpoint-sm: 576px;
+  --breakpoint-xl: 1200px;
+  --cellSize: calc(var(--gridSize / 5));
+  --cellSizeAboveTablet: calc(40vh / 5);
+  --color-highlight: var(--color-white);
+  --color-bellroy-grey: rgb(247 247 247);
+  --color-bellroy-orange: #e15a1d;
+  --color-white: #ffffff;
+  --gridSize: 40vw;
+  --gridSizeAboveTablet: 40vh;
+  --transition: all 0.35s ease-in-out;
+  --btn-radius: 4px;
+}
+
+body {
+  background-color: #fff;
+  background-image: url("/background-texture-repeat.jpg");
+  padding: 10px 20px 40px;
+}
