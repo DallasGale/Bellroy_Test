@@ -1,21 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import "@styles/index.scss";
-
-//  Functions
 import { move, left, right } from "../_functions";
-
-// Types
 import { FaceTypes } from "../types";
-
-//  Components
 import Nav from "@components/nav";
 import Grid from "@components/grid";
 import Header from "@components/header";
+import "@styles/index.scss";
 
 const App = () => {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [pos, setPos] = useState({ x: 2, y: 2 });
   const [face, setFace] = useState<FaceTypes>(FaceTypes.n);
 
   const handleSubmit = (face: FaceTypes, x: number, y: number) => {

@@ -1,12 +1,8 @@
-import { FaceTypes } from "../../types";
+import { FaceTypes, GridProps } from "../../types";
 import GridRow from "../gridRow";
 import Robot from "../robot";
 import styles from "./styles.module.scss";
 
-interface GridProps {
-  face: FaceTypes;
-  pos: { x: number; y: number };
-}
 const Grid = ({ face, pos }: GridProps) => {
   return (
     <div className={styles.grid}>

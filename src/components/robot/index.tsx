@@ -1,14 +1,8 @@
 import React from "react";
-
-import type { FaceTypes } from "../../types";
+import { RobotProps } from "../../types";
 import styles from "./styles.module.scss";
 import classnames from "classnames";
 
-interface RobotProps {
-  face: FaceTypes;
-  x: number;
-  y: number;
-}
 const Robot: React.FC<RobotProps> = ({ face, x, y }) => {
   const classes = classnames(
     styles.robot,

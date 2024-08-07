@@ -1,9 +1,5 @@
+import { ButtonProps } from "@/types";
 import styles from "./styles.module.scss";
-
-interface ButtonProps {
-  label: React.ReactNode;
-  onClick: () => void;
-}
 
 const Button = ({ label, onClick }: ButtonProps) => {
   return (

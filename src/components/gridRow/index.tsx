@@ -1,8 +1,5 @@
+import { GridProps } from "@/types";
 import styles from "./styles.module.scss";
-
-interface GridProps {
-  cellIds: Number[];
-}
 
 const GridRow = ({ cellIds }: GridProps) => (
   <div className={styles.row}>
